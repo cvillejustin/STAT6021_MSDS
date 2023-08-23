@@ -1,0 +1,109 @@
+---
+title: "Module B Practice Questions"
+author: "Justin Roberts"
+date: "2023-08-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## STAT 6021: Module B Practice Questions
+### Topic B.2: Getting Started with R
+
+#### 1.a) Read this data in and assign it to an object called cars.df
+
+```{r}
+cars.df<-mtcars
+```
+
+#### 1.b) Report how many observations and variables are in this dataset
+
+cars.df has 32 observations of 11 variables
+
+#### 2.a) Read "students.txt" in and assign it to an object called students.df
+
+```{r}
+students.df<-read.delim("/Users/Justin/Desktop/STAT 6021/students.txt")
+```
+
+#### 2.b) Report how many observations and variables are in this dataset
+
+students.df has 249 observations of 9 variables
+
+#### 3) Install Packages
+
+In the IDE, I went to Tools, then Install Packages to select and install the listed packages
+
+#### 4) Load faraway package, read in the dataset called cornnit and assign it to an object called corn.df
+
+```{r}
+corn.df<-faraway::cornnit
+```
+
+### Topic B.3: Data Types & Structures in R
+
+#### 5) Are the following valid names for objects in R?
+
+Yes - e, h
+No - a, b, c, d, f, g
+
+#### 6) Create a numeric vector with: 13, 91, 36, 95, 9, 3, 61, 20, 22, 97.  Assign them to a vector called practice and use R to find out if practice is a character, numeric, or logical type
+
+```{r}
+practice<-c(13,91,36,95,9,3,61,20,22,97)
+is.numeric(practice)
+is.character(practice)
+is.logical(practice)
+```
+
+#### 7) For each of the following, determin if they are TRUE or FALSE.  Answer first then use R to confirm
+
+TRUE - d, e
+FALSE - a, b, c, f
+
+```{r}
+practice[5]==5
+practice[10]!=97
+(practice[1]+practice[2])<104
+(practice[1]+practice[2])<=104
+(practice[2]==91) & (practice[9]==22)
+(practice[5]<9) | (practice[6]>=4)
+```
+
+#### 8) Create the matrix and assign it to the object Mat.A
+
+```{r}
+mat.A<-matrix(c(4,6,1,2,3,1), nrow = 2, ncol = 3)
+mat.A
+```
+
+##### 8.a) Give the following column names to Mat.A: "Huey", "Dewey", "Louie"
+
+```{r}
+colnames(mat.A)<-c("Huey","Dewey","Louie")
+mat.A
+```
+
+##### 8.b) What is the output if we type Mat.A[2,1]?
+
+6
+
+##### 8.c) What is the output if we type dim(Mat.A)?
+
+2 3
+
+#### 9) Convert the vector practice to a factor. What is the order of the levels in this factor?
+
+Ascending order (smallest to largest)
+
+```{r}
+practice2<-factor(practice)
+practice2
+```
+
+### Topic B.4: R Markdown
+#### 10) Type up your answers to these questions using R Markdown and output an HTML file
+
+See above
